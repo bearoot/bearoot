@@ -1,0 +1,1 @@
+/* BINDS */jwerty.key('ctrl+left', function() {$('#previous').click();} );jwerty.key('ctrl+right', function() {$('#next').click();} );jwerty.key('ctrl+shift+f', function() { $('#search input').caret(0); } );
