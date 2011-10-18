@@ -1,11 +1,11 @@
 <?php
 
-require_once(__DIR__.'/silex.phar');
+require_once(__DIR__ . '/silex.phar');
+require_once(__DIR__ . '/Twig/Autoloader.php');
 
-$app = new Silex\Application(); 
+$app = new Silex\Application();
+Twig_Autoloader::register();
 
-$app->get('/{name}', function($name) use($app) { 
-    return 'Hello '.$app->escape($name); 
-}); 
+require_once(dirname(__FILE__) . '/config.php');
 
-$app->run(); 
+

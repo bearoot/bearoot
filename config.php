@@ -1,1 +1,1 @@
-<?phpecho('');
+<?php$app['debug'] = true;$app->register(new Silex\Provider\TwigServiceProvider(), array(    'twig.path'       => __DIR__.'/templates',    'twig.class_path' => __DIR__.'/Twig',));
