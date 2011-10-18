@@ -1,0 +1,48 @@
+ COMPRESSION
+
+# compress text, html, javascript, css, xml:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+# Or, compress certain file types by extension:
+<Files *.html>
+	SetOutputFilter DEFLATE
+</Files>
+
+# Certains navigateurs ont des problèmes avec gzip, c'est pourquoi nous faisons des exceptions
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+
+# Les images n'ont pas besoin d'êtres compressées puisqu'elles le sont déjà (jpg, gif...)
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+
+# Pour les proxy
+Header append Vary User-Agent env=!dont-vary
+
+
+# CACHE
+
+# Cache navigateur
+# 1 semaine
+Header set Cache-Control "max-age=604800, public"
+
+
+
+# REWRITING
+
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+
+    RewriteEngine On
+    #RewriteBase /path/to/app
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
