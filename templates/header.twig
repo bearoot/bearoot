@@ -9,30 +9,39 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 		<meta name="author" content="BEAROOT" />
 		
-		<link rel="icon" type="image/png" href="favicon.png" /> 
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="icon" type="image/png" href="{{ SERVER_ROOT }}favicon.png" /> 
+		<link rel="shortcut icon" type="image/x-icon" href="{{ SERVER_ROOT }}favicon.ico" />
 		
 		<title>BEAROOT.FR</title>
 		
 		
-		<link href="css/wijmo/jquery-wijmo.css" rel="stylesheet" type="text/css" />
-		<link href="css/wijmo/jquery.wijmo.wijsuperpanel.css" rel="stylesheet" type="text/css" />
-		<link href="css/wijmo/jquery.wijmo.wijmenu.css" rel="stylesheet" type="text/css" />
-		<link href="css/wijmo/jquery.wijmo.wijtextbox.css" rel="stylesheet" type="text/css" />
-		<link href="css/wijmo/jquery.wijmo.wijlist.css" rel="stylesheet" type="text/css" />
-		<link href="css/wijmo/jquery.wijmo.wijdropdown.css" rel="stylesheet" type="text/css" />
-		<link href="css/wijmo/jquery.wijmo.wijradio.css" rel="stylesheet" type="text/css" />
-		<link href="css/wijmo/jquery.wijmo.wijcheckbox.css" rel="stylesheet" type="text/css" />
+		<link href="{{ SERVER_ROOT }}css/wijmo/jquery-wijmo.css" rel="stylesheet" type="text/css" />
+		<link href="{{ SERVER_ROOT }}css/wijmo/jquery.wijmo.wijsuperpanel.css" rel="stylesheet" type="text/css" />
+		<link href="{{ SERVER_ROOT }}css/wijmo/jquery.wijmo.wijmenu.css" rel="stylesheet" type="text/css" />
+		<link href="{{ SERVER_ROOT }}css/wijmo/jquery.wijmo.wijtextbox.css" rel="stylesheet" type="text/css" />
+		<link href="{{ SERVER_ROOT }}css/wijmo/jquery.wijmo.wijlist.css" rel="stylesheet" type="text/css" />
+		<link href="{{ SERVER_ROOT }}css/wijmo/jquery.wijmo.wijdropdown.css" rel="stylesheet" type="text/css" />
+		<link href="{{ SERVER_ROOT }}css/wijmo/jquery.wijmo.wijradio.css" rel="stylesheet" type="text/css" />
+		<link href="{{ SERVER_ROOT }}css/wijmo/jquery.wijmo.wijcheckbox.css" rel="stylesheet" type="text/css" />
 		
-		<link href="css/wijmo/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet/less" type="text/css" href="css/style.less" />
+		<link href="{{ SERVER_ROOT }}css/wijmo/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet/less" type="text/css" href="{{ SERVER_ROOT }}css/style.less" />
+		<style type="text/css">
+                    /* FONTS */
+                    @font-face {
+                            font-family: 'FranchiseRegular';
+                            src: url('{{ SERVER_ROOT }}css/fonts/franchise-bold-webfont.eot');
+                            src: url('{{ SERVER_ROOT }}css/fonts/franchise-bold-webfont.eot?#iefix') format('embedded-opentype'), url('{{ SERVER_ROOT }}css/fonts/franchise-bold-webfont.woff') format('woff'), url('{{ SERVER_ROOT }}css/fonts/franchise-bold-webfont.ttf') format('truetype'), url('{{ SERVER_ROOT }}css/fonts/franchise-bold-webfont.svg#FranchiseRegular') format('svg');
+                            font-weight: normal;
+                            font-style: normal;
+                    }
+                </style>
 		
-		
-		<script src="js/less.min.js" type="text/javascript"></script>
-		<script src="js/head.min.js" type="text/javascript"></script>
+		<script src="{{ SERVER_ROOT }}js/less.min.js" type="text/javascript"></script>
+		<script src="{{ SERVER_ROOT }}js/head.min.js" type="text/javascript"></script>
 		
 		<!--[if lt IE 10]>
-			<script type="text/javascript" src="js/PIE.js"></script>
+			<script type="text/javascript" src="{{ SERVER_ROOT }}js/PIE.js"></script>
 			<script type="text/javascript">
 				$(function() {
 					$('*').each(function() {
@@ -53,21 +62,21 @@
 		
 		<script type="text/javascript">
 			head.js(
-				"js/jquery-1.6.2.min.js",
-				"js/jquery-ui-1.8.16.custom.min.js",
+				"{{ SERVER_ROOT }}js/jquery-1.6.2.min.js",
+				"{{ SERVER_ROOT }}js/jquery-ui-1.8.16.custom.min.js",
 				
-				"js/wijmo/jquery.wijmo.wijutil.min.js",
-				"js/wijmo/jquery.wijmo.wijsuperpanel.min.js",
-				"js/wijmo/jquery.wijmo.wijmenu.min.js",
-				"js/wijmo/jquery.wijmo.wijtextbox.min.js",
-				"js/wijmo/jquery.wijmo.wijlist.min.js",
-				"js/wijmo/jquery.wijmo.wijdropdown.min.js",
-				"js/wijmo/jquery.wijmo.wijradio.min.js",
-				"js/wijmo/jquery.wijmo.wijcheckbox.min.js",
+				"{{ SERVER_ROOT }}js/wijmo/jquery.wijmo.wijutil.min.js",
+				"{{ SERVER_ROOT }}js/wijmo/jquery.wijmo.wijsuperpanel.min.js",
+				"{{ SERVER_ROOT }}js/wijmo/jquery.wijmo.wijmenu.min.js",
+				"{{ SERVER_ROOT }}js/wijmo/jquery.wijmo.wijtextbox.min.js",
+				"{{ SERVER_ROOT }}js/wijmo/jquery.wijmo.wijlist.min.js",
+				"{{ SERVER_ROOT }}js/wijmo/jquery.wijmo.wijdropdown.min.js",
+				"{{ SERVER_ROOT }}js/wijmo/jquery.wijmo.wijradio.min.js",
+				"{{ SERVER_ROOT }}js/wijmo/jquery.wijmo.wijcheckbox.min.js",
 				
-				"js/jquery.mousewheel.min.js",
-				"js/jquery.bgiframe-2.1.3-pre.js",
-				"js/jquery-sticky-footer.js",
+				"{{ SERVER_ROOT }}js/jquery.mousewheel.min.js",
+				"{{ SERVER_ROOT }}js/jquery.bgiframe-2.1.3-pre.js",
+				"{{ SERVER_ROOT }}js/jquery-sticky-footer.js",
 				function() {
 					$.widget( "custom.catcomplete", $.ui.autocomplete, {
 						_renderMenu: function( ul, items ) {
@@ -161,10 +170,10 @@
 								]
 						});
 						
-						head.js("js/jwerty.js",
-								"js/jquery.caret.js",
-								"js/binder.js",
-								"js/slider.js",
+						head.js("{{ SERVER_ROOT }}js/jwerty.js",
+								"{{ SERVER_ROOT }}js/jquery.caret.js",
+								"{{ SERVER_ROOT }}js/binder.js",
+								"{{ SERVER_ROOT }}js/slider.js",
 								function() {
 									slideInit();
 						});
@@ -178,9 +187,9 @@
 		<div id="header">
 			<div id="headerFilter">
 				<div class="centerContent">
-					<a href="#">
+					<a href="{{ SERVER_ROOT }}">
 						<div class="left">
-							<img id="logo" alt="logo bearoot" width="64" height="64" class="left top" src="img/logo-64.png"/>
+							<img id="logo" alt="logo bearoot" width="64" height="64" class="left top" src="{{ SERVER_ROOT }}img/logo-64.png"/>
 							<div id="slogan" class="left">
 								<h1>b e a r o o t <span class="hl">alpha</span></h1>
 								&ldquo;&nbsp;Par&nbsp;les&nbsp;developpeurs,&nbsp;pour&nbsp;les&nbsp;developpeurs.&nbsp;&rdquo;

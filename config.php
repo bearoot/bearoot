@@ -1,1 +1,1 @@
-<?php$app['debug'] = true;$app->register(new Silex\Provider\TwigServiceProvider(), array(    'twig.path'       => __DIR__.'/templates',    'twig.class_path' => __DIR__.'/Twig',));
+<?php$app['debug'] = true;$app->register(new Silex\Provider\TwigServiceProvider(), array(    'twig.path' => __DIR__ . '/templates',    'twig.class_path' => __DIR__ . '/Twig',));$SERVER_ROOT = "/bearoot/";
