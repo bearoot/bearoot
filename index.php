@@ -1,1 +1,1 @@
-<?phprequire_once(__DIR__ . '/init.php');$app->get('/', function() use($app) {            return ($app['twig']->render('header.twig') .                    $app['twig']->render('default.twig') .                                        $app['twig']->render('footer.twig'));        });require_once(__DIR__ . '/end.php');
+<?phprequire_once(__DIR__ . '/init.php');require_once(__DIR__ . '/routes.php');require_once(__DIR__ . '/end.php');
