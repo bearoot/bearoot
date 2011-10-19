@@ -1,1 +1,1 @@
-<?phprequire_once(__DIR__ . '/init.php');require_once(__DIR__ . '/routes.php');require_once(__DIR__ . '/end.php');
+<?phprequire_once(dirname(__FILE__). '/init.php');require_once(dirname(__FILE__) . '/routes.php');require_once(dirname(__FILE__) . '/end.php');

@@ -1,3 +1,6 @@
+# OVH
+SetEnv PHP_VER 5_TEST
+
 # COMPRESSION
 
 # compress text, html, javascript, css, xml:
