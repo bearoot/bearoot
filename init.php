@@ -1,11 +1,19 @@
 <?php
 
-require_once(dirname(__FILE__) . '/lib/silex.phar');
-require_once(dirname(__FILE__) . '/lib/Twig/Autoloader.php');
+require_once(__DIR__ . '/vendor/silex/silex.phar');
+
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+
 
 $app = new Silex\Application();
-Twig_Autoloader::register();
 
-require_once(dirname(__FILE__) . '/config.php');
+$app->register(new Silex\Extension\TwigExtension(), array(
+    'twig.path' => __DIR__ . '/templates',
+    'twig.class_path' => __DIR__ . '/vendor/twig/lib',
+));
 
+
+require_once(__DIR__ . '/config.php');
 
