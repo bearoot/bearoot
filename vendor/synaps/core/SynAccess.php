@@ -6,7 +6,7 @@ abstract class SynAccess extends SynSingleton {
      * liste de requêtes préparées
      */
 
-    public $_connexion;
+    private $_connexion;
     private $_queries;
 
     /*
@@ -14,6 +14,10 @@ abstract class SynAccess extends SynSingleton {
      * une requête préparée pour
      * l'entité passée en paramêtre
      */
+
+    public function getConnexion() {
+        return $this->_connexion;
+    }
 
     public function getPreparedStatement($className = "", $operation = "") {
         /*
@@ -26,7 +30,7 @@ abstract class SynAccess extends SynSingleton {
          * si le nom de la classe est vide
          * alors on retourne une chaine vide
          */
-        if ($className == "" || $operation = "")
+        if ($className === "" || $operation === "")
             return "";
 
         /*
