@@ -43,6 +43,7 @@ abstract class SynObject {
         if (!isset($this->_properties[$name]))
             throw new Exception("Property **$name** cannot be set(), it  doesn't exists !", 400);
         $this->_properties[$name]['value'] = $value;
+        settype($this->_properties[$name]['value'], $this->_properties[$name]['type']);
         $this->_modified = true;
     }
 
@@ -75,16 +76,14 @@ abstract class SynObject {
     abstract private function validate();
 
     public function save() {
-        $error = $this->validate();
-        if (!isset($error{0})) {
-            if ($this->_idValue !== 0) {
-                if ($this->_modified)
-                    return $this->update();
-            } else {
+        $valid = $this->validate();
+        if ($valid === true) {
+            if ($this->_idValue !== 0 && $this->_loaded && $this->_modified)
+                return $this->update();
+            else
                 return $this->add();
-            }
         }
-        return false;
+        return $valid;
     }
 
     private function add() {
@@ -114,9 +113,12 @@ abstract class SynObject {
     }
 
     public function delete() {
-        $stmt = &SynAccess::getPreparedStatement(__CLASS__, "DELETE");
-        $stmt->bindValue("idValue", $this->_idValue);
-        return $stmt->execute();
+        if ($this->_loaded) {
+            $stmt = &SynAccess::getPreparedStatement(__CLASS__, "DELETE");
+            $stmt->bindValue("idValue", $this->_idValue);
+            return $stmt->execute();
+        }
+        return false;
     }
 
     private function exist() {
